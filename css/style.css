@@ -30,6 +30,13 @@ body {
     padding: 0px 36px;
 }
 
+.container.disable .editor-container,
+.container.disable .controls .download-img,
+.container.disable .reset-image {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 .controls {
     display: flex;
     flex-wrap: wrap;
@@ -71,14 +78,11 @@ body {
     border: 1px solid #fbfb10c2;
 }
 
-.img-container {
-    padding: 16px 32px;
-}
-
-.img-container .preview-img {
+.preview-img {
     flex-grow: 1;
     display: flex;
     overflow: hidden;
+    padding: 16px 38px;
     border-radius: 5px;
     align-items: center;
     justify-content: center;
@@ -95,13 +99,13 @@ body {
     padding: 36px;
 }
 
-.title{
+.title {
     display: block;
     font-size: 22px;
     margin-bottom: 14px;
 }
 
-.brightness-container{
+.brightness-container {
     margin-bottom: 12px;
 }
 
@@ -111,53 +115,88 @@ body {
     margin-bottom: 5px;
 }
 
-.slider-container input {
+.filter-container input {
     height: 5px;
     width: 100%;
 }
 
-.options{
+.editor-container .options {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.rotate-container{
-    margin-top: 26px;
+.filter-container button {
+    height: 40px;
+    outline: none;
+    font-size: 14px;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    color: black;
+    background: #fff;
+    border: 1px solid black;
 }
 
-.rotate-container .options button {
-    padding: 12px 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.filter-container .options .active {
+    background: #5372F0;
+    color: #fff;
+    border: 1px solid #5372F0;
+}
+
+.rotate-container button {
+    height: 40px;
     outline: none;
+    font-size: 14px;
     border-radius: 5px;
-    width: calc(100% / 4 - 15px);
+    margin-bottom: 12px;
     color: #fff;
     background: #5372F0;
     border: 1px solid #5372F0;
 }
 
+.editor-container .filter-container button {
+    width: calc(100% /2 - 10px);
+}
+
+.rotate-container {
+    margin-top: 26px;
+}
+
+.rotate-container .options button {
+    display: flex;
+    width: calc(100% / 4 - 15px);
+    justify-content: center;
+    align-items: center;
+}
+
 .rotate-container .options button:nth-child(3),
-.rotate-container .options button:nth-child(4){
+.rotate-container .options button:nth-child(4) {
     font-size: 18px;
 }
 
+.rotate-container button:active {
+    background: #fff;
+    color: black;
+}
+
 @media screen and (max-width: 730px) {
-    .download-img{
+    .container {
+        padding: 30px 0px 0px;
+    }
+
+    .download-img {
         margin-top: 30px;
     }
-    .button-container{
+
+    .button-container {
         width: 100%;
     }
+
     .controls button {
         width: 100%;
     }
-    .reset-image{
+
+    .reset-image {
         margin-right: 0px;
-    }   
+    }
 }
-
-
-

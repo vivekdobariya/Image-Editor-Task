@@ -11,39 +11,32 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container disable">
         <h2>Image Editor</h2>
         <div class="controls">
             <div class="button-container">
                 <input type="file" class="file-input" accept="image/*" hidden>
                 <button class="choose-img">Choose Image</button>
-                <button class="reset-image">Reset Image</button>
+                <button class="reset-image">Reset Filters</button>
             </div>
             <button class="download-img">Download Image</button>
         </div>
-        <div class="img-container">
-            <div class="preview-img">
-                <img src="images/No-Image-Placeholder.svg.png" alt="preview-img">
-            </div>
+        <div class="preview-img">
+            <img src="images/No-Image-Placeholder.svg.png" alt="preview-img">
         </div>
         <div class="editor-container">
-            <div class="slider-container">
+            <div class="filter-container">
                 <label class="title">Filters</label>
-                <div class="filter-container">
-                    <div class="brightness-container">
-                        <div class="light-info">
-                            <p class="name">Brighteness</p>
-                            <p class="value">100%</p>
-                        </div>
-                        <input type="range" value="100" min="0" max="200">
+                <div class="options">
+                    <button id="brightness" class="active">Brightness</button>
+                    <button id="grayscale">Grayscale</button>
+                </div>
+                <div class="slider-container">
+                    <div class="light-info">
+                        <p class="name">Brighteness</p>
+                        <p id="brighness" class="value">50%</p>
                     </div>
-                    <div class="grayscale-container">
-                        <div class="light-info">
-                            <p class="name">GrayScale</p>
-                            <p class="value">100%</p>
-                        </div>
-                        <input type="range" value="100" min="0" max="200">
-                    </div>
+                    <input type="range" value="50" min="0" max="100">
                 </div>
             </div>
             <div class="rotate-container">
